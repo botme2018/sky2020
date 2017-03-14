@@ -1363,7 +1363,7 @@ return "شما مدیر گروه نمیباشید"
 end
 end
 
-local mute_all = data[tostring(target)]["mutes"]["mute_all"] 
+local mute_all = data[tostring(target)]["ممنوعیت"][ممنوعیت_همه"] 
 if mute_all == "yes" then 
 if not lang then
 return "*Mute All* _Is Already Enabled_" 
@@ -1371,7 +1371,7 @@ elseif lang then
 return "بیصدا کردن همه فعال است"
 end
 else 
-data[tostring(target)]["mutes"]["mute_all"] = "yes"
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_همه"] = "yes"
  save_data(_config.moderation.data, data) 
 if not lang then
 return "*Mute All* _Has Been Enabled_" 
@@ -2270,7 +2270,7 @@ if not lang then
 return "*Mute Keyboard* _Is Already Disabled_"
 elseif lang then
 return "بیصدا کردن صفحه کلید غیرفعال است"
-end 
+ممنوend 
 else 
 data[tostring(target)]["mutes"]["mute_keyboard"] = "no"
  save_data(_config.moderation.data, data) 
@@ -2294,91 +2294,91 @@ end
 end
 local data = load_data(_config.moderation.data)
 local target = msg.to.id 
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_all"] then			
-data[tostring(target)]["mutes"]["mute_all"] = "no"		
+if data[tostring(target)]["منموعیت"] then		
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_همه"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_همه"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_gif"] then			
-data[tostring(target)]["mutes"]["mute_gif"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then		
+if not data[tostring(target)]["منوعیت"]["ممنوعیت_گیف"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_گیف"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_text"] then			
-data[tostring(target)]["mutes"]["mute_text"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then		
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_متن"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_متن"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_photo"] then			
-data[tostring(target)]["mutes"]["mute_photo"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then	
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_عکس"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_عکس"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_video"] then			
-data[tostring(target)]["mutes"]["mute_video"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then	
+if not data[tostring(target)]["ممنوعیت"]["mute_video"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_فیلم"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_audio"] then			
-data[tostring(target)]["mutes"]["mute_audio"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then	
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_اهنگ"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_اهنگ"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_voice"] then			
-data[tostring(target)]["mutes"]["mute_voice"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then	
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_صدا"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_صدا"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_sticker"] then			
-data[tostring(target)]["mutes"]["mute_sticker"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then	
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_استیکر"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_استیکر"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_contact"] then			
-data[tostring(target)]["mutes"]["mute_contact"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_مخاطب"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_مخاطب"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_forward"] then			
-data[tostring(target)]["mutes"]["mute_forward"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then	
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_فوروارد"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_فوروارد"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_location"] then			
-data[tostring(target)]["mutes"]["mute_location"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then	
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_محدوده"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_محدوده"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_document"] then			
-data[tostring(target)]["mutes"]["mute_document"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then	
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_سند"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_سند"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_tgservice"] then			
-data[tostring(target)]["mutes"]["mute_tgservice"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then	
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_تگ سرور"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_تگ سرور"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_inline"] then			
-data[tostring(target)]["mutes"]["mute_inline"] = "no"		
+if data[tostring(target)]["ممنوعیت"] then		
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_خط"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_خط"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_game"] then			
-data[tostring(target)]["mutes"]["mute_game"] = "no"		
+if data[tostring(target)]["ممنوعیتممنوعیت"] then		
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_بازی"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_بازی"] = "no"		
 end
 end
-if data[tostring(target)]["mutes"] then		
-if not data[tostring(target)]["mutes"]["mute_keyboard"] then			
-data[tostring(target)]["mutes"]["mute_keyboard"] = "no"		
+if data[tostring(target)]["ممنوعیتممنوعیت"] then		
+if not data[tostring(target)]["ممنوعیت"]["ممنوعیت_کیبورد"] then			
+data[tostring(target)]["ممنوعیت"]["ممنوعیت_کیبورد"] = "no"		
 end
 end
 if not lang then
-local mutes = data[tostring(target)]["mutes"] 
+local mutes = data[tostring(target)]["ممنوعیت"] 
  text = " *Group Mute List* : \n_Mute all : _ *"..mutes.mute_all.."*\n_Mute gif :_ *"..mutes.mute_gif.."*\n_Mute text :_ *"..mutes.mute_text.."*\n_Mute inline :_ *"..mutes.mute_inline.."*\n_Mute game :_ *"..mutes.mute_game.."*\n_Mute photo :_ *"..mutes.mute_photo.."*\n_Mute video :_ *"..mutes.mute_video.."*\n_Mute audio :_ *"..mutes.mute_audio.."*\n_Mute voice :_ *"..mutes.mute_voice.."*\n_Mute sticker :_ *"..mutes.mute_sticker.."*\n_Mute contact :_ *"..mutes.mute_contact.."*\n_Mute forward :_ *"..mutes.mute_forward.."*\n_Mute location :_ *"..mutes.mute_location.."*\n_Mute document :_ *"..mutes.mute_document.."*\n_Mute TgService :_ *"..mutes.mute_tgservice.."*\n_Mute Keyboard :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @BeyondTeam\n*Group Language* : *EN*"
 else
-local mutes = data[tostring(target)]["mutes"] 
+local mutes = data[tostring(target)]["ممنوعیت"] 
  text = " *لیست بیصدا ها* : \n_بیصدا همه : _ *"..mutes.mute_all.."*\n_بیصدا تصاویر متحرک :_ *"..mutes.mute_gif.."*\n_بیصدا متن :_ *"..mutes.mute_text.."*\n_بیصدا کیبورد شیشه ای :_ *"..mutes.mute_inline.."*\n_بیصدا بازی های تحت وب :_ *"..mutes.mute_game.."*\n_بیصدا عکس :_ *"..mutes.mute_photo.."*\n_بیصدا فیلم :_ *"..mutes.mute_video.."*\n_بیصدا آهنگ :_ *"..mutes.mute_audio.."*\n_بیصدا صدا :_ *"..mutes.mute_voice.."*\n_بیصدا برچسب :_ *"..mutes.mute_sticker.."*\n_بیصدا مخاطب :_ *"..mutes.mute_contact.."*\n_بیصدا نقل قول :_ *"..mutes.mute_forward.."*\n_بیصدا موقعیت :_ *"..mutes.mute_location.."*\n_بیصدا اسناد :_ *"..mutes.mute_document.."*\n_بیصدا خدمات تلگرام :_ *"..mutes.mute_tgservice.."*\n_بیصدا صفحه کلید :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @BeyondTeam\n_زبان سوپرگروه_ : *FA*"
 end
 return text
@@ -2429,7 +2429,7 @@ if matches[2] then
     }, action_by_username, {chat_id=msg.to.id,username=matches[2],cmd="id"})
       end
    end
-if matches[1] == "pin" and is_mod(msg) and msg.reply_id then
+if matches[1] == "پین" and is_mod(msg) and msg.reply_id then
 local lock_pin = data[tostring(msg.to.id)]["settings"]["lock_pin"] 
  if lock_pin == 'yes' then
 if is_owner(msg) then
@@ -2455,7 +2455,7 @@ return "پیام سجاق شد"
 end
 end
 end
-if matches[1] == 'unpin' and is_mod(msg) then
+if matches[1] == 'حذف پین' and is_mod(msg) then
 local lock_pin = data[tostring(msg.to.id)]["settings"]["lock_pin"] 
  if lock_pin == 'yes' then
 if is_owner(msg) then
@@ -2483,7 +2483,7 @@ end
 if matches[1] == "rem" then
 return modrem(msg)
 end
-if matches[1] == "setowner" and is_admin(msg) then
+if matches[1] == "تنظیم مالک" and is_admin(msg) then
 if not matches[2] and msg.reply_id then
     tdcli_function ({
       ID = "GetMessage",
@@ -2504,7 +2504,7 @@ tdcli_function ({
     }, action_by_username, {chat_id=msg.to.id,username=matches[2],cmd="setowner"})
       end
    end
-if matches[1] == "remowner" and is_admin(msg) then
+if matches[1] == "حذف مالک" and is_admin(msg) then
 if not matches[2] and msg.reply_id then
     tdcli_function ({
       ID = "GetMessage",
@@ -2525,7 +2525,7 @@ tdcli_function ({
     }, action_by_username, {chat_id=msg.to.id,username=matches[2],cmd="remowner"})
       end
    end
-if matches[1] == "promote" and is_owner(msg) then
+if matches[1] == "ارتقا" and is_owner(msg) then
 if not matches[2] and msg.reply_id then
     tdcli_function ({
       ID = "GetMessage",
@@ -2546,7 +2546,7 @@ tdcli_function ({
     }, action_by_username, {chat_id=msg.to.id,username=matches[2],cmd="promote"})
       end
    end
-if matches[1] == "demote" and is_owner(msg) then
+if matches[1] == "عزل" and is_owner(msg) then
 if not matches[2] and msg.reply_id then
  tdcli_function ({
       ID = "GetMessage",
@@ -2805,7 +2805,7 @@ if matches[1] == 'لینک جدید' and is_mod(msg) then
 		 	end
        end
 		end
-    if matches[1] == 'link' and is_mod(msg) then
+    if matches[1] == 'لینک' and is_mod(msg) then
       local linkgp = data[tostring(chat)]['settings']['linkgp']
       if not linkgp then
       if not lang then
@@ -2850,7 +2850,7 @@ if matches[1] == 'لینک جدید' and is_mod(msg) then
   return "قوانین گروه ثبت شد"
    end
   end
-  if matches[1] == "rules" then
+  if matches[1] == "قوانین" then
  if not data[tostring(chat)]['rules'] then
    if not lang then
      rules = "ℹ️ The Default Rules :\n1⃣ No Flood.\n2⃣ No Spam.\n3⃣ No Advertising.\n4⃣ Try to stay on topic.\n5⃣ Forbidden any racist, sexual, homophobic or gore content.\n➡️ Repeated failure to comply with these rules will cause ban.\n@BeyondTeam"
@@ -3100,88 +3100,88 @@ _نمایش شناسه کاربر_
 *کیه* `[id]`
 _نمایش نام کاربر, نام کاربری و اطلاعات حساب_
 
-*!lock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
+*قفل* `[لینک | تگ | ویرایش | عربی | صفحه وب | ربات | اسپم | فلود | اشاره گذاری | اشاره | پین]`
 _در صورت قفل بودن فعالیت ها, ربات آنهارا حذف خواهد کرد_
 
-*!unlock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
+*بازکردن* `[لینک | تگ | ویرایش | عربی | صفخه وب | ربات | اسپم | فلود | اشاره گذار | اشاره | پین]`
 _در صورت قفل نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد_
 
-*!mute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
+*ممنوعیت* `[گیف | عکس | سند | استیکر | کیبورد | فیلم | متن | فوروارد | محدوده | اهنگ | صدا | مخاطب | همه]`
 _در صورت بیصدد بودن فعالیت ها, ربات آنهارا حذف خواهد کرد_
 
-*!unmute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
+*حذف ممنوعیت* `[گیف | عکس | سند | استیکر | کیبورد | فیلم | متن | فوروارد | محدوده | اهنگ | صدا | مخاطب | همه]`
 _در صورت بیصدا نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد_
 
-*!set*`[rules | name | photo | link | about | welcome]`
+*تنظیم*`[قوانین | نام | عکس | لینک | درباره | خوش امد]`
 _ربات آنهارا ثبت خواهد کرد_
 
-*!clean* `[bans | mods | bots | rules | about | silentlist | filterlist | welcome]`   
+*حذف*`[قوانین | نام | عکس | لینک | درباره | خوش امد]`   
 _ربات آنهارا پاک خواهد کرد_
 
-*!filter* `[word]`
+*فیلتر* `[word]`
 _فیلتر‌کلمه مورد نظر_
 
-*!unfilter* `[word]`
+*حذف فیلترr* `[word]`
 _ازاد کردن کلمه مورد نظر_
 
-*!pin* `[reply]`
+*پین* `[reply]`
 _ربات پیام شمارا در گروه سنجاق خواهد کرد_
 
-*!unpin* 
+*حذف پین* 
 _ربات پیام سنجاق شده در گروه را حذف خواهد کرد_
 
-*!welcome enable/disable*
+*خوش امد فعال/غیر فعال*
 _فعال یا غیرفعال کردن خوشآمد گویی_
 
-*!settings*
+*تنظیمات*
 _نمایش تنظیمات گروه_
 
-*!mutelist*
+*لیست ممنوعیت*
 _نمایش فهرست بیصدا های گروه_
 
-*!silentlist*
+*لیست بی صدا*
 _نمایش فهرست افراد بیصدا_
 
-*!filterlist*
+*لیست فیلتر*
 _نمایش لیست کلمات فیلتر شده_
 
-*!banlist*
+*لیست بن*
 _نمایش افراد مسدود شده از گروه_
 
-*!ownerlist*
+*لیست مالک*
 _نمایش فهرست مالکان گروه_ 
 
-*!modlist* 
+*مود لیست* 
 _نمایش فهرست مدیران گروه_
 
-*!rules*
+*قوانین*
 _نمایش قوانین گروه_
 
-*!about*
+*درباره*
 _نمایش درباره گروه_
 
-*!id*
+*ایدی*
 _نمایش شناسه شما و گروه_
 
-*!gpinfo*
+*اطلاعات گروه*
 _نمایش اطلاعات گروه_
 
-!*newlink*
+!*لینک جدید*
 _ساخت لینک جدید_
 
-*!link*
+*لینک*
 _نمایش لینک گروه_
 
-*!linkpv*
+*لینک پی وی*
 _ارسال لینک گروه به چت خصوصی شما_
 
-*!setwelcome [text]*
+*تنظیم خوش امدی [text]*
 _ثبت پیام خوش آمد گویی_
 
 *!helptools*
 _نمایش راهنمای Tools_
 
-*!helpfun*
+*راهنما سرگرمی*
 _نمایش راهنمای سرگرمی_
 
 _شما میتوانید از [!/#] در اول دستورات برای اجرای آنها بهره بگیرید
@@ -3319,7 +3319,7 @@ _نمایش راهنمای Tools_
 
 *!helpfun*
 _نمایش راهنمای سرگرمی_
-
+----------------------------------------------------------------------------
 _شما میتوانید از [!/#] در اول دستورات برای اجرای آنها بهره بگیرید
 
 این راهنما فقط برای مدیران/مالکان گروه میباشد!
@@ -3370,7 +3370,7 @@ end
 			end
 		end
 	end
-	if matches[1] == "setwelcome" and matches[2] and is_mod(msg) then
+	if matches[1] == "تنظیم خوش امد" and matches[2] and is_mod(msg) then
 		data[tostring(chat)]['setwelcome'] = matches[2]
 	    save_data(_config.moderation.data, data)
        if not lang then
