@@ -88,7 +88,7 @@ local function calc(exp)
 	b,c = http.request(url)
 	text = nil
 	if c == 200 then
-    text = 'Result = '..b..'\n____________________\n @BeyondTeam :)'
+    text = 'Result = '..b..'\n____________________\n @GODILOVEYOUME2 :)'
 	elseif c == 400 then
 		text = b
 	else
@@ -130,7 +130,7 @@ function run(msg, matches)
 		return calc(matches[2])
 	end
 --------------------------------
-	if matches[1]:lower() == 'praytime' or matches[1] == 'azan' then
+	if matches[1]:lower() == 'اوقتات شرعی' or matches[1] == 'اذان' then
 		if matches[2] then
 			city = matches[2]
 		elseif not matches[2] then
@@ -148,11 +148,11 @@ function run(msg, matches)
 		text = text..'\nغروب آفتاب: '..data.Sunset
 		text = text..'\nاذان مغرب: '..data.Maghrib
 		text = text..'\nعشاء : '..data.Isha
-		text = text..'\n@BeyondTeam\n'
+		text = text..'\n@GODILOVEYOUME2\n'
 		return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'html')
 	end
 --------------------------------
-	if matches[1]:lower() == 'tophoto' and msg.reply_id then
+	if matches[1]:lower() == 'تبدیل به عکس' and msg.reply_id then
 		function tophoto(arg, data)
 			function tophoto_cb(arg,data)
 				if data.content_.sticker_ then
@@ -167,7 +167,7 @@ function run(msg, matches)
 					local apath = tostring(tcpath)..'/data/sticker'
 					if file_exi(tostring(name), tostring(apath), tostring(pasvand)) then
 						os.rename(file, pfile)
-						tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, pfile, "@BeyondTeam", dl_cb, nil)
+						tdcli.sendPhoto(msg.to.id, 0, 0, 1, nil, pfile, "@GODILOVEYOUME2", dl_cb, nil)
 					else
 						tdcli.sendMessage(msg.to.id, msg.id_, 1, '_This sticker does not exist. Send sticker again._', 1, 'md')
 					end
@@ -180,7 +180,7 @@ function run(msg, matches)
 		tdcli_function ({ ID = 'GetMessage', chat_id_ = msg.chat_id_, message_id_ = msg.reply_id }, tophoto, nil)
     end
 --------------------------------
-	if matches[1]:lower() == 'tosticker' and msg.reply_id then
+	if matches[1]:lower() == 'تبدیل به استیکر' and msg.reply_id then
 		function tosticker(arg, data)
 			function tosticker_cb(arg,data)
 				if data.content_.ID == 'MessagePhoto' then
@@ -202,7 +202,7 @@ function run(msg, matches)
 		tdcli_function ({ ID = 'GetMessage', chat_id_ = msg.chat_id_, message_id_ = msg.reply_id }, tosticker, nil)
     end
 --------------------------------
-	if matches[1]:lower() == 'weather' then
+	if matches[1]:lower() == 'اب هوای' then
 		city = matches[2]
 		local wtext = get_weather(city)
 		if not wtext then
@@ -211,7 +211,7 @@ function run(msg, matches)
 		return wtext
 	end
 --------------------------------
-	if matches[1]:lower() == 'time' then
+	if matches[1]:lower() == 'ساعت' then
 		local url , res = http.request('http://api.gpmod.ir/time/')
 		if res ~= 200 then
 			return "No connection"
@@ -225,7 +225,7 @@ function run(msg, matches)
 
 	end
 --------------------------------
-if matches[1] == 'voice' then
+if matches[1] == 'صدا' then
  local text = matches[2]
     textc = text:gsub(' ','.')
     
@@ -233,8 +233,8 @@ if matches[1] == 'voice' then
       return nil
       else
   local url = "http://tts.baidu.com/text2audio?lan=en&ie=UTF-8&text="..textc
-  local file = download_to_file(url,'BD-Reborn.mp3')
- 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '@BeyondTeam', dl_cb, nil)
+  local file = download_to_file(url,'BLACK.mp3')
+ 				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '@GODILOVEYOUME2', dl_cb, nil)
    end
 end
 
@@ -242,7 +242,7 @@ end
 	if matches[1] == "tr" then 
 		url = https.request('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160119T111342Z.fd6bf13b3590838f.6ce9d8cca4672f0ed24f649c1b502789c9f4687a&format=plain&lang='..URL.escape(matches[2])..'&text='..URL.escape(matches[3]))
 		data = json:decode(url)
-		return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n @BeyondTeam :)'
+		return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n @GODILOVEYOUME2 :)'
 	end
 --------------------------------
 	if matches[1]:lower() == 'short' then
@@ -263,7 +263,7 @@ end
 		return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'html')
 	end
 --------------------------------
-	if matches[1]:lower() == "sticker" then 
+	if matches[1]:lower() == "استیکر" then 
 		local eq = URL.escape(matches[2])
 		local w = "500"
 		local h = "500"
@@ -285,7 +285,7 @@ end
 		tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, '', dl_cb, nil)
 	end
 --------------------------------
-	if matches[1]:lower() == "photo" then 
+	if matches[1]:lower() == "عکس" then 
 		local eq = URL.escape(matches[2])
 		local w = "500"
 		local h = "500"
@@ -309,14 +309,14 @@ end
 
 
 --------------------------------
-if matches[1] == "helpfun" then
+if matches[1] == "راهنما سرگرمی بلک" then
 local hash = "gp_lang:"..msg.to.id
 local lang = redis:get(hash)
 if not lang then
 helpfun = [[
 _Beyond Reborn Fun Help Commands:_
 
-*!time*
+*ساعت*
 _Get time in a sticker_
 
 *!short* `[link]`
@@ -363,13 +363,13 @@ else
 helpfun = [[
 _راهنمای فان ربات بیوند:_
 
-*!time*
+*ساعت*
 _دریافت ساعت به صورت استیکر_
 
 *!short* `[link]`
 _کوتاه کننده لینک_
 
-*!voice* `[text]`
+*صدا* `[text]`
 _تبدیل متن به صدا_
 
 *!tr* `[lang]` `[word]`
@@ -377,28 +377,28 @@ _ترجمه متن فارسی به انگلیسی وبرعکس_
 _مثال:_
 _!tr en سلام_
 
-*!sticker* `[word]`
+*استیکر* `[word]`
 _تبدیل متن به استیکر_
 
-*!photo* `[word]`
+*عکس* `[word]`
 _تبدیل متن به عکس_
 
-*!azan* `[city]`
+*اذان* `[city]`
 _دریافت اذان_
 
 *!calc* `[number]`
 _ماشین حساب_
 
-*!praytime* `[city]`
+*اوقات شرعی* `[city]`
 _اعلام ساعات شرعی_
 
-*!tosticker* `[reply]`
+*تبدیل به استیکر* `[reply]`
 _تبدیل عکس به استیکر_
 
-*!tophoto* `[reply]`
+*تبدیل به عکس* `[reply]`
 _تبدیل استیکر‌به عکس_
 
-*!weather* `[city]`
+*اب هوای r* `[شهر انگلیسی]`
 _دریافت اب وهوا_
 
 *شما میتوانید از [!/#] در اول دستورات برای اجرای آنها بهره بگیرید*
@@ -412,21 +412,21 @@ end
 --------------------------------
 return {               
 	patterns = {
-      "^[!/#](helpfun)$",
-    	"^[!/#](weather) (.*)$",
+      "^[](راهنما سرگرمی)$",
+    	"^[](اب هوای) (.*)$",
 		"^[!/](calc) (.*)$",
-		"^[#!/](time)$",
-		"^[#!/](tophoto)$",
-		"^[#!/](tosticker)$",
-		"^[!/#](voice) +(.*)$",
+		"^[](ساعت)$",
+		"^[](تبدیل به عکس)$",
+		"^[](تبدیل به استیکر)$",
+		"^[](صدا) +(.*)$",
 		"^[/!#]([Pp]raytime) (.*)$",
-		"^[/!#](praytime)$",
+		"^[](اوقات شرعی)$",
 		"^[/!#]([Aa]zan) (.*)$",
-		"^[/!#](azan)$",
-		"^[!/]([Tt]r) ([^%s]+) (.*)$",
-		"^[!/]([Ss]hort) (.*)$",
-		"^[!/](photo) (.+)$",
-		"^[!/](sticker) (.+)$"
+		"^[/!#](اذان)$",
+		"^[/]([Tt]r) ([^%s]+) (.*)$",
+		"^[/]([Ss]hort) (.*)$",
+		"^[](عکس) (.+)$",
+		"^[](استیکر) (.+)$"
 		}, 
 	run = run,
 	}
